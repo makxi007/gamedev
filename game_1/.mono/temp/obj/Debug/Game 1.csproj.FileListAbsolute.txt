@@ -1,0 +1,8 @@
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/bin/Debug/Game 1.dll
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/bin/Debug/Game 1.pdb
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/obj/Debug/Game 1.csprojAssemblyReference.cache
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/obj/Debug/Game 1.AssemblyInfoInputs.cache
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/obj/Debug/Game 1.AssemblyInfo.cs
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/obj/Debug/Game 1.csproj.CoreCompileInputs.cache
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/obj/Debug/Game 1.dll
+/home/makxi/Desktop/godot/games/gamedev/game_1/.mono/temp/obj/Debug/Game 1.pdb
