@@ -19,16 +19,30 @@ public class Player_green : KinematicBody2D
 	//Shot variables;
 	private bool can_fire = true;
 	public float bullet_delay = 0.5F;
-	PackedScene bullet;
-	Area2D bullet_instance;
-	Position2D bullet_position;
+	public PackedScene bullet;
+	private Bullet bullet_instance;
+	private Position2D bullet_position;
+	private Vector2 bullet_pos;
+	private Vector2 bullet_global_pos;
+	private int shot_direction = 1;
+
 	
+
+
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		animSprite = (AnimatedSprite)GetNode("AnimatedSprite");
-		bullet = (PackedScene)ResourceLoader.Load("res://scenes/players/Bullets/Bullet.tscn");
+		bullet = GD.Load<PackedScene>("res://scenes/players/Bullets/Bullet.tscn");
+
+
+
 		bullet_position = (Position2D)GetNode("Position2D");
+		bullet_pos = bullet_position.Position;
+		bullet_global_pos = bullet_position.GlobalPosition;
+
+
 	}
 	
 	public void getInput(){
@@ -37,10 +51,14 @@ public class Player_green : KinematicBody2D
 
 		if (Input.IsActionPressed("d_right")){
 			animSprite.FlipH = false;
+			shot_direction = 1;
+
 			direction = 1;
 		}
 		if (Input.IsActionPressed("a_left")){
 			animSprite.FlipH = true;
+			shot_direction = -1;
+
 			direction = -1;
 		}
 
@@ -55,15 +73,37 @@ public class Player_green : KinematicBody2D
 
 	}
 
-	public void Shot(){
-		bullet_instance = (Area2D)bullet.Instance();
-		this.AddChild(bullet_instance);
-		bullet_instance.GlobalPosition = bullet_position.GlobalPosition;
+	public async void Shot(){
+		bullet_instance = (Bullet)bullet.Instance();
+		
+		//bullet_position.Position *= shot_direction;
+		GetParent().AddChild(bullet_instance);
+		bullet_instance.Position = bullet_position.GlobalPosition;
+		bullet_instance.SetBulletDirection(shot_direction);
 
-		// can_fire = false;
-		// await ToSignal(GetTree().CreateTimer(bullet_delay), "timeout");
-		// can_fire = true;
+
+		can_fire = false;
+		await ToSignal(GetTree().CreateTimer(bullet_delay), "timeout");
+		can_fire = true;
+
 	}
+
+    // public override void _UnhandledInput(InputEvent @event)
+    // {
+    //     if (@event is InputEventMouseButton mouseEvent){
+	// 		if (!mouseEvent.Pressed && mouseEvent.ButtonIndex == (int)ButtonList.Left){
+	// 			bullet_instance = (Bullet)bullet.Instance();
+				
+	// 			//bullet_position.Position *= shot_direction;
+	// 			this.AddChild(bullet_instance);
+	// 			bullet_instance.Position = bullet_position.GlobalPosition;
+	// 			bullet_instance.SetBulletDirection(shot_direction);
+	// 			GD.Print("Hello from godot");
+	// 		}
+	// 	}
+    // }
+
+    
 
 	public void Jump(){
 		if (IsOnFloor()){
@@ -74,6 +114,7 @@ public class Player_green : KinematicBody2D
 	public override void _PhysicsProcess(float delta){
 		getInput();
 		velocity.y += gravity * delta;
+		
 
 		velocity = MoveAndSlide(velocity , surface);
 
