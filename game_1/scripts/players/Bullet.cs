@@ -4,13 +4,15 @@ using System;
 
 public class Bullet : Area2D
 {
-    public int speed = 10;
+    public int speed = 300;
     public float maxDistance = 100f;
     private Vector2 velocity = new Vector2();
     private Vector2 originalPosition;
     public int direction = 1;
     public Sprite bullet_sprite;
 
+    [Signal]
+    public delegate void TakeDamage(int damage);
 
     public override void _Ready()
     {
@@ -35,6 +37,7 @@ public class Bullet : Area2D
     {
         velocity.x = speed * direction * delta;
         Translate(velocity);
+        //How long bullet will fly;
         // float distanceTravelled = this.Position.DistanceTo(this.originalPosition);
         // if (distanceTravelled > maxDistance){
         //    this.QueueFree();
@@ -42,6 +45,11 @@ public class Bullet : Area2D
     }
 
     private void _on_Bullet_body_entered(Node body){
-        GD.Print("Body entered");
+        if (!body.IsInGroup("player")){
+            QueueFree();
+        }
+        if (body.IsInGroup("enemy")){
+            
+        }
     }
 }

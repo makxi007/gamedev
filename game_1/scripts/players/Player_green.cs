@@ -76,34 +76,16 @@ public class Player_green : KinematicBody2D
 	public async void Shot(){
 		bullet_instance = (Bullet)bullet.Instance();
 		
-		//bullet_position.Position *= shot_direction;
+		bullet_position.Position = new Vector2(20*shot_direction, 5);
 		GetParent().AddChild(bullet_instance);
 		bullet_instance.Position = bullet_position.GlobalPosition;
 		bullet_instance.SetBulletDirection(shot_direction);
-
 
 		can_fire = false;
 		await ToSignal(GetTree().CreateTimer(bullet_delay), "timeout");
 		can_fire = true;
 
 	}
-
-    // public override void _UnhandledInput(InputEvent @event)
-    // {
-    //     if (@event is InputEventMouseButton mouseEvent){
-	// 		if (!mouseEvent.Pressed && mouseEvent.ButtonIndex == (int)ButtonList.Left){
-	// 			bullet_instance = (Bullet)bullet.Instance();
-				
-	// 			//bullet_position.Position *= shot_direction;
-	// 			this.AddChild(bullet_instance);
-	// 			bullet_instance.Position = bullet_position.GlobalPosition;
-	// 			bullet_instance.SetBulletDirection(shot_direction);
-	// 			GD.Print("Hello from godot");
-	// 		}
-	// 	}
-    // }
-
-    
 
 	public void Jump(){
 		if (IsOnFloor()){
@@ -114,8 +96,7 @@ public class Player_green : KinematicBody2D
 	public override void _PhysicsProcess(float delta){
 		getInput();
 		velocity.y += gravity * delta;
-		
-
+	
 		velocity = MoveAndSlide(velocity , surface);
 
 		if (Input.IsActionPressed("jump")){
