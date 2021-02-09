@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/LabelText.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 150.0
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 1024.0
+margin_bottom = 65.0
+text = "main menu"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_left = 436.0
+margin_top = 69.0
+margin_right = 588.0
+margin_bottom = 283.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_constants/separation = 100
+
+[node name="Start" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_right = 152.0
+margin_bottom = 57.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 157.0
+margin_right = 152.0
+margin_bottom = 214.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 287.0
+margin_right = 1024.0
+margin_bottom = 450.0
+size_flags_vertical = 3
+
+[node name="Label" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_top = 49.0
+margin_right = 463.0
+margin_bottom = 114.0
+text = "Something here"
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
