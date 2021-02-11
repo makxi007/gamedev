@@ -19,6 +19,10 @@ config/name="pong-game"
 run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GLOBAL="*res://scripts/GLOBAL.gd"
+
 [display]
 
 window/stretch/mode="2d"
@@ -34,6 +38,11 @@ w_up={
 s_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+reload_ball_R={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
 }
 
