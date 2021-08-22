@@ -1,9 +1,0 @@
-[gd_scene format=2]
-
-[node name="CPUParticles2D" type="CPUParticles2D"]
-explosiveness = 0.75
-randomness = 0.33
-emission_shape = 1
-emission_sphere_radius = 1.0
-gravity = Vector2( 0, 98 )
-color = Color( 0.941406, 0.0436113, 0.0220642, 1 )

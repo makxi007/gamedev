@@ -1,8 +1,0 @@
-/home/makxi/Desktop/godot/games/pong/.mono/temp/bin/Debug/Pong.dll
-/home/makxi/Desktop/godot/games/pong/.mono/temp/bin/Debug/Pong.pdb
-/home/makxi/Desktop/godot/games/pong/.mono/temp/obj/Debug/Pong.csprojAssemblyReference.cache
-/home/makxi/Desktop/godot/games/pong/.mono/temp/obj/Debug/Pong.AssemblyInfoInputs.cache
-/home/makxi/Desktop/godot/games/pong/.mono/temp/obj/Debug/Pong.AssemblyInfo.cs
-/home/makxi/Desktop/godot/games/pong/.mono/temp/obj/Debug/Pong.csproj.CoreCompileInputs.cache
-/home/makxi/Desktop/godot/games/pong/.mono/temp/obj/Debug/Pong.dll
-/home/makxi/Desktop/godot/games/pong/.mono/temp/obj/Debug/Pong.pdb
