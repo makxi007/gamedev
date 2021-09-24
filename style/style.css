@@ -1,0 +1,351 @@
+*{
+	margin: 0 ;
+}
+body{
+	background:#f1f1f1;
+}
+
+@font-face {
+	font-family: Bellaty-PersonalUse;
+	src: url(../fonts/Bellaty-PersonalUse.otf);
+}
+
+/* ----- HEADER -------*/
+.header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__title{
+	font-size: 30px;
+	font-family: Bellaty-PersonalUse;
+	color:black;
+	text-decoration:none;
+	margin-left:20px;
+	color:grey;
+}
+
+.header__title:hover{
+	color:black;
+}
+
+.main{
+	display: flex;
+	justify-content: space-between;
+	width:1024px;
+	margin: 0 auto;
+	background: green;
+}
+
+.navigation ul a{
+	color:grey;
+	cursor:pointer;
+}
+
+.navigation ul a:hover{
+	color:black;
+}
+
+/* ----- background -------*/
+.bg-header{
+	background:#ffffff;
+}
+
+/* ----- navigation -------*/
+.navigation ul{
+	display:flex;
+	flex-direction: row;
+	margin:10px 10px;
+}
+
+.navigation ul li{
+	margin-right:10px;
+	list-style: none;
+
+}
+
+.header__link {
+	text-decoration:none ;
+	font-size:30px;
+	color:black;
+}
+
+@media only screen and (max-width: 800px){
+	.main{
+		width: 100%;
+
+	}
+}
+
+/* ----- HEADER -------*/
+
+/* ----- ABOUT -------*/
+
+.main__title{
+	margin: 0 auto;
+	border: 4px solid white;	
+	font-size:12px;
+	color:white;
+	padding:5px;
+	margin-top: 70px;
+}
+
+.about__content{
+	display:flex;
+	width:768px;
+	margin: 0 auto;
+	justify-content: space-between;
+}
+
+.inner__about{
+	display: flex;
+	flex-direction: column;
+}
+
+.about__hello{
+	width: 85%;
+	text-align: center;
+	margin:0 auto;
+	display: flex;
+	justify-content: flex-start;
+	color: white;
+	margin-top: 20px;
+}
+
+.about__text{
+	width: 85%;
+	font-size: 12px;
+	margin:0 auto;
+	margin-top: 20px;
+	color:white;
+}
+
+.about__hello p{
+	font-size:20px;
+}
+
+.about__text p{
+	font-size:20px;
+}
+
+.links__content{
+	display: flex;
+	flex-direction: column;
+	margin-top:50px;
+	color:white;
+}
+
+.links__content img {
+	width:32px;
+	height: 32px;
+}
+
+.about__title img{
+	border:2px solid black;
+	border-radius: 50%;
+	padding: 1px;
+	width: 100px;
+	height: 100px;
+	margin-bottom:101px;
+	vertical-align: middle;
+}
+
+.bg-main{
+	background: #64b8a6;
+
+}
+
+.media__hide{
+	display: none;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 20px;
+
+}
+
+.media_show{
+	display: flex;
+
+}
+
+.media__show h1{
+	cursor: pointer;
+	text-align: center;
+}
+
+/* ----- ABOUT -------*/
+
+/* ----- EDUCATION -------*/
+
+.bg-education{
+	background-color: white;
+}
+
+.education__title{
+	color:#464451;
+	border-color:#464451;
+}
+
+#education{
+	display: flex;
+	justify-content: space-between;
+}
+
+.education__text{
+	color:#464451;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+/* ----- EDUCATION -------*/
+
+
+/* ----- SKILLS/KNOWLEDGES -------*/
+
+.bg-skills_knowledges{
+	background-color: #64b8a6;
+}
+
+.skills_knowl__title{
+	color: white;
+}
+
+.knowledges__list{
+	font-size:20px;
+	color:white;
+	margin-top:20px;
+}
+
+.knowledges__list li{
+	list-style-type: none;
+}
+
+.knowledges{
+	padding-bottom: 20px;
+}
+
+.li__title{
+	font-size:22px;
+}
+
+/*
+.skills{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align:center;
+}
+
+.skills-bg{
+	background: white;
+	color:#64b8a6;
+}
+
+.skills__title{
+	margin: 30px 0;
+}
+
+.skills__content{
+	margin: 30px 50px;
+}
+
+.skills__container{
+	width:90%;
+	background:  #ddd;
+	text-align: right;
+	color:white;
+	padding: 5px 5px;
+}
+
+.skills__inner{
+	padding: 1px 1px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.skills__inner p{
+	color:white;
+	width: 10%;
+
+}
+
+.container{
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+
+.python{
+	width:70%;
+	background:#64b8a6;
+	text-align: center;
+}
+
+.htmlcss{
+	width:50%;
+	background:#64b8a6;
+}
+
+.c_lang{
+	width:30%;
+	background:#64b8a6;
+}
+
+.gamedev{
+	width:30%;
+	background:#64b8a6;
+}
+*/
+
+/* ----- SKILLS ------- */
+
+/* ----- OTHER AND LANGUAGES -------*/
+
+.bg-other_languages{
+	background-color: white;
+}
+
+.other__list{
+	list-style-type: none;
+	color: #464451;
+	padding-bottom: 20px;
+	font-size:20px;
+	padding-top:10px;
+}
+
+/* ----- OTHER AND LANGUAGES -------*/
+
+/* ------ CONTACT ------- */
+.contact-bg{
+	background:#64b8a6;
+	color:white;
+}
+
+.contact{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.contact__title{
+	margin-top: 30px;
+	text-align: center;
+	
+}
+
+.contact__links ul{
+	text-align: center;
+	
+}
+
+.contact__links li{
+	list-style:none;
+	margin: 20px 20px;
+}
+
+.contact__media{
+	width: 32px;
+	height: 32px;
+}
+
+/* ------ CONTACT -------*/
